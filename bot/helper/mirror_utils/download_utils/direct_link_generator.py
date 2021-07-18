@@ -89,6 +89,10 @@ def direct_link_generator(link: str):
         return anonfiles(link)
     elif 'racaty.net' in link:
         return racaty(link)
+     elif 'vip-fkadeh.ir' in link:
+        return fkadeh(link)
+     elif 'mb2mvlink.xyz' in link:
+        return mb2mvlink(link)
     else:
         raise DirectDownloadLinkException(f'No Direct link function found for {link}')
 
@@ -309,6 +313,19 @@ def antfiles(url: str) -> str:
     Based on https://github.com/breakdowns/slam-mirrorbot """
     bypasser = lk21.Bypass()
     dl_url=bypasser.bypass_antfiles(url)
+    return dl_url
+
+def fkadeh(url: str) -> str:
+    """ Antfiles direct link generator
+    Based on https://github.com/breakdowns/slam-mirrorbot """
+    dl_url= url.replace("http://vip-fkadeh.ir/download.php?url=dl/s3", "http://s3.vip-fkadeh.ir")
+    return dl_url
+
+
+def mb2mvlink(url: str) -> str:
+    """ Antfiles direct link generator
+    Based on https://github.com/breakdowns/slam-mirrorbot """
+    dl_url= url.replace("https://mb2mvlink.xyz/download.php?server=2&url=", "http://dl2.mblink.bid/")
     return dl_url
 
 
