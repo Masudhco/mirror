@@ -89,10 +89,12 @@ def direct_link_generator(link: str):
         return anonfiles(link)
     elif 'racaty.net' in link:
         return racaty(link)
-     elif 'vip-fkadeh.ir' in link:
+    elif 'vip\-fkadeh.ir' in link:
         return fkadeh(link)
-     elif 'mb2mvlink.xyz' in link:
+    elif 'mb2mvlink.xyz' in link:
         return mb2mvlink(link)
+    elif 'serbdl.xyz' in link:
+        return serbdl(link)
     else:
         raise DirectDownloadLinkException(f'No Direct link function found for {link}')
 
@@ -326,6 +328,15 @@ def mb2mvlink(url: str) -> str:
     """ Antfiles direct link generator
     Based on https://github.com/breakdowns/slam-mirrorbot """
     dl_url= url.replace("https://mb2mvlink.xyz/download.php?server=2&url=", "http://dl2.mblink.bid/")
+    return dl_url
+
+
+def serbdl(url: str) -> str:
+    """ Antfiles direct link generator
+    Based on https://github.com/breakdowns/slam-mirrorbot """
+    url1= url.replace("https://serbdl.xyz/s2", "http://s2.serbdl.xyz")
+    url2= url1.replace("https://serbdl.xyz/s1", "http://s1.serbdl.xyz")
+    dl_url= url2.replace("https://serbdl.xyz/s3", "http://s3.serbdl.xyz")
     return dl_url
 
 
