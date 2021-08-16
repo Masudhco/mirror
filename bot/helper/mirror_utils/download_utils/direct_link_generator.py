@@ -89,7 +89,7 @@ def direct_link_generator(link: str):
         return anonfiles(link)
     elif 'racaty.net' in link:
         return racaty(link)
-    elif 'vip\-fkadeh.ir' in link:
+    elif 'vipfkadeh.ir' in link:
         return fkadeh(link)
     elif 'mb2mvlink.xyz' in link:
         return mb2mvlink(link)
